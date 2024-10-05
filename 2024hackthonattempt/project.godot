@@ -19,6 +19,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 InteractionManager="*res://EntityAttributes/interactions/InteractionManager.tscn"
 
+[global_group]
+
+Player="player"
+
 [input]
 
 Interaction={
