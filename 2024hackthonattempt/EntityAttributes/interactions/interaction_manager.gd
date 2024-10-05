@@ -7,9 +7,12 @@ const base_text = "Press [E] to "
 
 var active_areas = []
 var can_interaction = true
+var interacted = false
 
 func register_area(area : interactionArea):
-	if (active_areas.has(area)):
+	if interacted ==true:
+		return 0
+	elif (active_areas.has(area)):
 		unregister_area(area)
 	else:
 		active_areas.push_back(area)
