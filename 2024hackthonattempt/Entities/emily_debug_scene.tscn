@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0vd5r3qj14i"]
+
+[ext_resource type="Script" path="res://Entities/emily_player_info.gd" id="1_1ofe0"]
+[ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="1_l3fjy"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_1ofe0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(298, 179)
+scale = Vector2(0.159966, 0.141855)
+texture = ExtResource("1_l3fjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
