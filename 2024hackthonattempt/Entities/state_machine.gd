@@ -8,7 +8,7 @@ var states : Dictionary = {}
 func _ready():
 	for child in get_children():
 		if child is State:
-			states[child.name] = child
+			states[child.name.to_lower()] = child
 			child.Transitioned.connect(on_child_transition)
 	
 	if initial_state:
@@ -27,13 +27,16 @@ func on_child_transition	(state, new_state_name):
 	if state != current_state:
 		return
 	
+	
 	var new_state = states.get(new_state_name.to_lower())
+	print(new_state)
 	if !new_state_name:
 		return
 		
 	if current_state:
 		current_state.Exit()
 	
+	print(new_state)
 	new_state.Enter()
 	
 	current_state = new_state

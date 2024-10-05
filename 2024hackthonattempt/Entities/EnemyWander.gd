@@ -3,6 +3,7 @@ class_name EnemyWander
 
 @export var enemy : CharacterBody2D
 @export var movespeed := 50.0
+@export var detector : RayCast2D
 
 var move_direction : Vector2
 var wander_time : float
@@ -24,3 +25,7 @@ func Update(delta : float):
 func Physics_Update(delta : float):
 	if enemy:
 		enemy.velocity = move_direction * movespeed
+	
+	var detection = detector.get_collider()
+	if detection != null and detection.name == 'Player':
+		Transitioned.emit(self, "EnemyChase")
