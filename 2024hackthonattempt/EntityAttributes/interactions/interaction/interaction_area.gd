@@ -12,6 +12,7 @@ var interact : Callable = func():
 
 func _on_body_entered(body:CharacterBody2D):
 	InteractionManager.register_area(self)
+	
 
 
 

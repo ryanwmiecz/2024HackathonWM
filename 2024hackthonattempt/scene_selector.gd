@@ -1,8 +1,7 @@
 #Do not edit, if u need a change tell me and i will edit and update this push.
 
 extends Control
-
-#Testing #testing im so testing coded
+var scene = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
