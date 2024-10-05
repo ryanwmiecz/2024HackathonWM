@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://b135w3c7dikyq"]
+[gd_scene load_steps=14 format=4 uid="uid://b135w3c7dikyq"]
 
 [ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_meble"]
 [ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="2_cf4my"]
 [ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_nctvn"]
 [ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="4_yvxd4"]
-[ext_resource type="Script" path="res://EntityAttributes/health_attribute.gd" id="5_n4ktt"]
 [ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="6_gnxps"]
 [ext_resource type="Script" path="res://Levels/testthing.gd" id="7_1t2y3"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="7_23s2l"]
@@ -227,7 +226,6 @@ shape = SubResource("RectangleShape2D_a0ju2")
 [node name="AttackAttribute" parent="player" instance=ExtResource("3_nctvn")]
 
 [node name="HealthAttribute" parent="player" instance=ExtResource("4_yvxd4")]
-script = ExtResource("5_n4ktt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAABsAAAACAAAAAAABABsAAAACAAAAAAACABsAAAACAAAAAAADABsAAAACAAAAAAAEABsAAAACAAAAAAAFABsAAAACAAAAAAAGABsAAAACAAAAAAAHABsAAAACAAAAAAAIABsAAAACAAAAAAAJABsAAAACAAAAAAAKABsAAAACAAAAAAALABsAAAACAAAAAAAMABsAAAACAAAAAAANABsAAAACAAAAAAAOABsAAAACAAAAAAAPABsAAAACAAAAAAAQABsAAAACAAAAAAARABsAAAACAAAAAAASABsAAAACAAAAAAATABsAAAACAAAAAAAUABsAAAACAAAAAAAVABsAAAACAAAAAAAWABsAAAACAAAAAAAXABsAAAACAAAAAAAYABsAAAACAAAAAAAZABsAAAACAAAAAAAaABsAAAACAAAAAAAbABsAAAACAAAAAAAcABsAAAACAAAAAAAdABsAAAACAAAAAAAeABsAAAACAAAAAAAfABsAAAACAAAAAAAgABsAAAACAAAAAAAhABsAAAACAAAAAAAiABsAAAACAAAAAAAjABsAAAACAAAAAAAkABsAAAACAAAAAAAlABsAAAACAAAAAAAmABsAAAACAAAAAAAnABsAAAACAAAAAAAoABsAAAACAAAAAAApABsAAAACAAAAAAAqABsAAAACAAAAAAArABsAAAACAAAAAAAsABsAAAACAAAAAAAtABsAAAACAAAAAAAuABsAAAACAAAAAAAvABsAAAACAAAAAAAwABsAAAACAAAAAAAxABsAAAACAAAAAAAyABsAAAACAAAAAAAzABsAAAACAAAAAAA0ABsAAAACAAAAAAA1ABsAAAACAAAAAAA2ABsAAAACAAAAAAA3ABsAAAACAAAAAAA4ABsAAAACAAAAAAA5ABsAAAACAAAAAAA6ABsAAAACAAAAAAA7ABsAAAACAAAAAAA8ABsAAAACAAAAAAA9ABsAAAACAAAAAAA+ABsAAAACAAAAAAA/ABsAAAACAAAAAAAAABoAAAACAAAAAAAAABkAAAACAAAAAAA/ABoAAAACAAAAAAA/ABkAAAACAAAAAAA=")
