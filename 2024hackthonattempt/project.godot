@@ -15,6 +15,10 @@ run/main_scene="res://scene_selector.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 <<<<<<<Updatedupstreamconfig/icon="res://icon.svg"
 
+[autoload]
+
+InteractionManager="*res://EntityAttributes/interactions/InteractionManager.tscn"
+
 [input]
 
 Interaction={
