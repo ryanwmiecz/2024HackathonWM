@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bti5ttt2l8c57"]
 
-[ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://10-4 hw.png" id="1_vwdwq"]
+[ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://10-4 hw.png" id="2_hjet5"]
 
 [node name="mainScene" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(973, 201)
 scale = Vector2(0.159966, 0.141855)
-texture = ExtResource("1_vwdwq")
+texture = ExtResource("2_hjet5")

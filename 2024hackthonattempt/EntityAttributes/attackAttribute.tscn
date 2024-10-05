@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://374vcktvnhfj"]
+
+[ext_resource type="Script" path="res://EntityAttributes/attack_attribute.gd" id="1_mm4bf"]
+
+[node name="AttackAttribute" type="Node2D"]
+script = ExtResource("1_mm4bf")

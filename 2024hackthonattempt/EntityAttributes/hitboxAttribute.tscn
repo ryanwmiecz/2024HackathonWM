@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtfty00uh70bj"]
+
+[ext_resource type="Script" path="res://EntityAttributes/hitbox_attribute.gd" id="1_r2eew"]
+
+[node name="HitboxAttribute" type="Area2D"]
+position = Vector2(151, 79)
+script = ExtResource("1_r2eew")

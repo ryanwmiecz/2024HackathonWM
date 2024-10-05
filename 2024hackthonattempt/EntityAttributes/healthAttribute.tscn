@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c0x3dcxovfkdc"]
+
+[node name="HealthAttribute" type="Node2D"]
