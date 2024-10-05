@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://k0vd5r3qj14i"]
+[gd_scene load_steps=10 format=4 uid="uid://caeorccx605cp"]
 
-[ext_resource type="Script" path="res://Entities/Player.gd" id="1_ewtkc"]
+[ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_ewtkc"]
 [ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="1_l3fjy"]
 [ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_mxmbv"]
 [ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="4_g5k8f"]
@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xeu6"]
 size = Vector2(143, 157)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnh34"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8b10"]
 texture = ExtResource("6_hgpfi")
 texture_region_size = Vector2i(18, 18)
 0:0/0 = 0
@@ -198,7 +198,7 @@ texture_region_size = Vector2i(18, 18)
 [sub_resource type="TileSet" id="TileSet_gbr7h"]
 tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_jnh34")
+sources/0 = SubResource("TileSetAtlasSource_j8b10")
 
 [node name="MainScene" type="Node2D"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbvo5n5bptqqt"]
+[gd_scene load_steps=2 format=3 uid="uid://u02hjr4lg1te"]
 
 [ext_resource type="Script" path="res://scene_selector.gd" id="1_f860y"]
 
@@ -30,5 +30,14 @@ offset_bottom = 303.0
 text = "Aaron Scene
 "
 
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 318.0
+offset_right = 503.0
+offset_bottom = 516.0
+text = "Ryan testing"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
