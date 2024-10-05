@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://c0x3dcxovfkdc"]
+[gd_scene load_steps=2 format=3 uid="uid://c0x3dcxovfkdc"]
+
+[ext_resource type="Script" path="res://EntityAttributes/health_attribute.gd" id="1_481by"]
 
 [node name="HealthAttribute" type="Node2D"]
+script = ExtResource("1_481by")

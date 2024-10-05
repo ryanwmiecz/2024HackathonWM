@@ -11,8 +11,8 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func healthChange (attack: attackAttribute):
-	curHealth -= attack.curAttack
+func healthChange (damage):
+	curHealth -= damage
 	
 	if curHealth <=0:
 		get_parent().queue_free()
