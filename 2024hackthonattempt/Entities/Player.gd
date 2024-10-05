@@ -11,7 +11,7 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor(): # todo!! assign in input map
+	if Input.is_action_just_pressed("ui_up") and is_on_floor(): # todo!! assign in input map (wasd)
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://k0vd5r3qj14i"]
 
-[ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_ewtkc"]
+[ext_resource type="Script" path="res://Entities/Player.gd" id="1_ewtkc"]
 [ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="1_l3fjy"]
 [ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_mxmbv"]
 [ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="4_g5k8f"]
