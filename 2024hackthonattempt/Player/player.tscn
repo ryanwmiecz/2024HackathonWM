@@ -1,7 +1,8 @@
-[gd_scene load_steps=82 format=3 uid="uid://cpr8s7quixop3"]
+[gd_scene load_steps=83 format=3 uid="uid://cpr8s7quixop3"]
 
 [ext_resource type="Script" path="res://Entities/PlayerController.gd" id="1_1s2dw"]
 [ext_resource type="Texture2D" uid="uid://b2qmqak6o7u84" path="res://Art/satiro-Sheet v1.1.png" id="2_vuahf"]
+[ext_resource type="AudioStream" uid="uid://dgfc6wkmim6sy" path="res://Player/dash.wav" id="3_5xo5m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxlhg"]
 atlas = ExtResource("2_vuahf")
@@ -598,3 +599,6 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5xo5m")

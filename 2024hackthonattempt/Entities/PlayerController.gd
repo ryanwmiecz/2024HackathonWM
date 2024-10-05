@@ -10,6 +10,7 @@ var dash_time = 0.1
 
 @export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
+@onready var dash_noise = $Dash
 
 
 func _physics_process(delta):
@@ -42,7 +43,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY / 1.5
 	
 	if Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0 && not is_on_floor():
-		print(jump_count)
+		dash_noise.play()
 		jump_count -= 1
 		dashing = true
 		print(velocity.x)
