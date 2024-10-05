@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://caeorccx605cp"]
+[gd_scene load_steps=11 format=4 uid="uid://k0vd5r3qj14i"]
 
 [ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_ewtkc"]
 [ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_mxmbv"]

@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const DASH_VELOCITY = 800
+var SPEED = 300.0
+var JUMP_VELOCITY = -400.0
+var DASH_VELOCITY = 800
 var jump_count = 1
 var dashing := false
 var dash_time = 0.1
+var spawn := Vector2(0,0)
+var dead = false
 
 @export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
@@ -19,7 +21,10 @@ func _physics_process(delta):
 		animated_sprite.flip_h = false
 	elif velocity.x < 0:
 		animated_sprite.flip_h = true
-	if dashing:
+	
+	if dead:
+		animated_sprite.play("die")
+	elif dashing:
 		animated_sprite.play("dash")
 	elif is_on_floor() && velocity == Vector2.ZERO:
 		animated_sprite.play("idle")
@@ -54,7 +59,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction && dashing == false:
+	if direction && dashing == false && dead == false:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -72,3 +77,15 @@ func _physics_process(delta):
 	
 	if was_on_floor && !is_on_floor:
 		coyote_timer.start()
+
+
+func _on_area_2d_body_entered(body):
+	print("die")
+	dead = true
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if dead == true:
+		self.position = spawn
+		dead = false
+	pass # Replace with function body.
