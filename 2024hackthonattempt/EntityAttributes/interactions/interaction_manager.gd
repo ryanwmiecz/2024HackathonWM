@@ -1,9 +1,9 @@
-extends Area2D
+extends Node2D
 
-#@onready var player
+@onready var player = get_tree().get_first_node_in_group("Player")
 @onready var label = $Label
 
-const base_text = "e to"
+const base_text = "Press [E] to "
 
 var active_areas = []
 var can_interaction = true
@@ -28,10 +28,9 @@ func _process(delta):
 		label.hide()
 		
 func _sort_by_distance_to_player(area1, area2):
-	print("inside sort by distance")
-#	var area1_to_player = player.global_position.distance_to(area1.global_position)
-#	var area2_to_player = player.global_position.distance_to(area2.global_position)
-##	return area1_to_player < area2_to_player	
+	var area1_to_player = player.global_position.distance_to(area1.global_position)
+	var area2_to_player = player.global_position.distance_to(area2.global_position)
+	return area1_to_player < area2_to_player	
 
 func _input(event):
 	if event.is_action_pressed("Interaction") && can_interaction:

@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ff13h1ooedhl"]
+[gd_scene load_steps=2 format=3 uid="uid://c5swby48w4ggp"]
 
 [ext_resource type="Script" path="res://EntityAttributes/interactions/interaction_manager.gd" id="1_1w1kx"]
 
-[node name="InteractionManager" type="Area2D"]
+[node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_1w1kx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -28.0
+offset_top = -64.0
+offset_right = 28.0
+offset_bottom = -41.0
+text = "Testing"
