@@ -13,7 +13,9 @@ var dead = false
 @export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
 @onready var dash_noise = $Dash
-
+@onready var jump_noise = $Jump
+@onready var death_noise = $Die
+@onready var bleat_noise = $Bleat
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,11 +43,15 @@ func _physics_process(delta):
 	
 	# Handle jump.
 	if (Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0:
+		jump_noise.play()
 		jump_count -= 1
 		if is_on_floor() || !coyote_timer.is_stopped():
 			velocity.y = JUMP_VELOCITY
 		else:
 			velocity.y = JUMP_VELOCITY / 1.5
+	
+	if (Input.is_action_just_pressed("bleat") && velocity == Vector2.ZERO && dead == false):
+		bleat_noise.play()
 	
 	if Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0 && not is_on_floor():
 		dash_noise.play()
@@ -81,6 +87,7 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	print("die")
+	death_noise.play()
 	dead = true
 
 
