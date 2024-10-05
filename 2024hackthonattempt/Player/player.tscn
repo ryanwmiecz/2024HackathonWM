@@ -658,7 +658,7 @@ animations = [{
 radius = 6.0
 height = 18.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite") groups=["Player"]]
 script = ExtResource("1_1s2dw")
 animated_sprite = NodePath("AnimatedSprite2D")
 
