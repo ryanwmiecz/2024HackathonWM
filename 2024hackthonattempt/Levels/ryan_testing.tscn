@@ -248,3 +248,5 @@ shape = SubResource("RectangleShape2D_satrc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/InteractionArea"]
 shape = SubResource("CircleShape2D_m4ech")
+
+[connection signal="body_entered" from="StaticBody2D2/InteractionArea" to="player" method="_on_interaction_area_body_entered"]

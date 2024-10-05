@@ -10,11 +10,11 @@ var interact : Callable = func():
 
 
 
-func _on_body_entered(body):
+func _on_body_entered(body:CharacterBody2D):
 	InteractionManager.register_area(self)
 
 
 
-func _on_body_exited(body):
+func _on_body_exited(body:CharacterBody2D):
 	InteractionManager.unregister_area(self)
 	
