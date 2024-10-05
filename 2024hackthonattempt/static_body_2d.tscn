@@ -1,29 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqv83jfynkk2p"]
+[gd_scene load_steps=6 format=3 uid="uid://bb7x5uy35baad"]
 
-[ext_resource type="Script" path="res://static_body_2d.gd" id="1_nupys"]
 [ext_resource type="Texture2D" uid="uid://c2imqbt355ac5" path="res://Art/Screenshot 2024-02-12 093304.png" id="2_6o51s"]
 [ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="3_7r7vp"]
 
+[sub_resource type="GDScript" id="GDScript_outop"]
+script/source = "extends StaticBody2D
+
+@onready var interaction_area =$InteractionArea
+@onready var sprite = $Sprite2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	interaction_area.interact=Callable(self, \"_we_are_testing\")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _we_are_testing():
+	print (\"testing output on interaction area\")
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0671e"]
-size = Vector2(139, 153)
+size = Vector2(83, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xc4dh"]
-size = Vector2(324, 266)
+size = Vector2(291, 101)
 
 [node name="StaticBody2D" type="StaticBody2D"]
-script = ExtResource("1_nupys")
+script = SubResource("GDScript_outop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-24, -8.5)
-scale = Vector2(0.20625, 0.785714)
+position = Vector2(3.5, 21)
+scale = Vector2(0.120312, 0.461538)
 texture = ExtResource("2_6o51s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-20.5, -4.5)
+position = Vector2(7.5, 25.5)
 shape = SubResource("RectangleShape2D_0671e")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_7r7vp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-9, -3)
+position = Vector2(-1, 24)
 shape = SubResource("RectangleShape2D_xc4dh")
