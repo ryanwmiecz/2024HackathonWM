@@ -212,3 +212,7 @@ sprite_frames = SubResource("SpriteFrames_1hrpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5d6g4")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true

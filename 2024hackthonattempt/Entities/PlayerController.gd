@@ -3,10 +3,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-const DASH_VELOCITY = 600
+const DASH_VELOCITY = 800
 var jump_count = 1
 var dashing := false
 var dash_time = 0.1
+
+@onready var coyote_timer = $CoyoteTimer
 
 
 func _physics_process(delta):
@@ -15,11 +17,14 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") && jump_count > 0:
+	if (Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0:
 		jump_count -= 1
-		velocity.y = JUMP_VELOCITY
+		if is_on_floor() || !coyote_timer.is_stopped():
+			velocity.y = JUMP_VELOCITY
+		else:
+			velocity.y = JUMP_VELOCITY / 1.5
 	
-	if Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0:
+	if Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0 && not is_on_floor():
 		print(jump_count)
 		jump_count -= 1
 		dashing = true
@@ -43,5 +48,9 @@ func _physics_process(delta):
 			velocity.x = direction * DASH_VELOCITY
 			velocity.y = 0
 			dash_time -= delta
-
+	var was_on_floor = is_on_floor()
+	
 	move_and_slide()
+	
+	if was_on_floor && !is_on_floor:
+		coyote_timer.start()
