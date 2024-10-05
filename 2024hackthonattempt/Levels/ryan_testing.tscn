@@ -1,14 +1,13 @@
-[gd_scene load_steps=15 format=4 uid="uid://b135w3c7dikyq"]
+[gd_scene load_steps=14 format=4 uid="uid://b135w3c7dikyq"]
 
 [ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_meble"]
 [ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="2_cf4my"]
 [ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_nctvn"]
 [ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="4_yvxd4"]
-[ext_resource type="Script" path="res://EntityAttributes/health_attribute.gd" id="5_n4ktt"]
 [ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="6_gnxps"]
-[ext_resource type="Script" path="res://Levels/testthing.gd" id="7_1t2y3"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="7_23s2l"]
-[ext_resource type="Texture2D" uid="uid://dh8d2qcnqpphu" path="res://Screenshot 2024-04-16 164120.png" id="7_jsla4"]
+[ext_resource type="Texture2D" uid="uid://b4qi5lx5nrmwg" path="res://Levels/Screenshot 2024-09-30 100837.png" id="10_jor6s"]
+[ext_resource type="Script" path="res://Levels/static_body_2d_2.gd" id="10_tcmnt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0ju2"]
 size = Vector2(84, 81)
@@ -203,11 +202,11 @@ tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_gsnda")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckvwg"]
-size = Vector2(98, 114)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_satrc"]
+size = Vector2(105, 130)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_homen"]
-radius = 201.683
+[sub_resource type="CircleShape2D" id="CircleShape2D_m4ech"]
+radius = 255.008
 
 [node name="ryan_testing" type="Node2D"]
 
@@ -227,27 +226,25 @@ shape = SubResource("RectangleShape2D_a0ju2")
 [node name="AttackAttribute" parent="player" instance=ExtResource("3_nctvn")]
 
 [node name="HealthAttribute" parent="player" instance=ExtResource("4_yvxd4")]
-script = ExtResource("5_n4ktt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAABsAAAACAAAAAAABABsAAAACAAAAAAACABsAAAACAAAAAAADABsAAAACAAAAAAAEABsAAAACAAAAAAAFABsAAAACAAAAAAAGABsAAAACAAAAAAAHABsAAAACAAAAAAAIABsAAAACAAAAAAAJABsAAAACAAAAAAAKABsAAAACAAAAAAALABsAAAACAAAAAAAMABsAAAACAAAAAAANABsAAAACAAAAAAAOABsAAAACAAAAAAAPABsAAAACAAAAAAAQABsAAAACAAAAAAARABsAAAACAAAAAAASABsAAAACAAAAAAATABsAAAACAAAAAAAUABsAAAACAAAAAAAVABsAAAACAAAAAAAWABsAAAACAAAAAAAXABsAAAACAAAAAAAYABsAAAACAAAAAAAZABsAAAACAAAAAAAaABsAAAACAAAAAAAbABsAAAACAAAAAAAcABsAAAACAAAAAAAdABsAAAACAAAAAAAeABsAAAACAAAAAAAfABsAAAACAAAAAAAgABsAAAACAAAAAAAhABsAAAACAAAAAAAiABsAAAACAAAAAAAjABsAAAACAAAAAAAkABsAAAACAAAAAAAlABsAAAACAAAAAAAmABsAAAACAAAAAAAnABsAAAACAAAAAAAoABsAAAACAAAAAAApABsAAAACAAAAAAAqABsAAAACAAAAAAArABsAAAACAAAAAAAsABsAAAACAAAAAAAtABsAAAACAAAAAAAuABsAAAACAAAAAAAvABsAAAACAAAAAAAwABsAAAACAAAAAAAxABsAAAACAAAAAAAyABsAAAACAAAAAAAzABsAAAACAAAAAAA0ABsAAAACAAAAAAA1ABsAAAACAAAAAAA2ABsAAAACAAAAAAA3ABsAAAACAAAAAAA4ABsAAAACAAAAAAA5ABsAAAACAAAAAAA6ABsAAAACAAAAAAA7ABsAAAACAAAAAAA8ABsAAAACAAAAAAA9ABsAAAACAAAAAAA+ABsAAAACAAAAAAA/ABsAAAACAAAAAAAAABoAAAACAAAAAAAAABkAAAACAAAAAAA/ABoAAAACAAAAAAA/ABkAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_nw1gr")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-script = ExtResource("7_1t2y3")
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1049, 418)
+script = ExtResource("10_tcmnt")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(200, 380)
-scale = Vector2(0.124365, 0.150538)
-texture = ExtResource("7_jsla4")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-6, -1)
+scale = Vector2(0.159539, 0.260736)
+texture = ExtResource("10_jor6s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(199, 380)
-shape = SubResource("RectangleShape2D_ckvwg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-2.5, -2)
+shape = SubResource("RectangleShape2D_satrc")
 
-[node name="InteractionArea" parent="StaticBody2D" instance=ExtResource("6_gnxps")]
-position = Vector2(199, 381)
-action_name = "PLEASE"
+[node name="InteractionArea" parent="StaticBody2D2" instance=ExtResource("6_gnxps")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/InteractionArea"]
-shape = SubResource("CircleShape2D_homen")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/InteractionArea"]
+shape = SubResource("CircleShape2D_m4ech")
