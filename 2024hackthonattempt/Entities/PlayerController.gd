@@ -8,13 +8,30 @@ var jump_count = 1
 var dashing := false
 var dash_time = 0.1
 
+@export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
 
 
 func _physics_process(delta):
 	# Add the gravity.
+	if velocity.x > 0:
+		animated_sprite.flip_h = false
+	elif velocity.x < 0:
+		animated_sprite.flip_h = true
+	if dashing:
+		animated_sprite.play("dash")
+	elif is_on_floor() && velocity == Vector2.ZERO:
+		animated_sprite.play("idle")
+	elif is_on_floor() && velocity.x != 0:
+		animated_sprite.play("walk")
+	elif velocity.y > 0:
+		animated_sprite.play("jump")
+	elif velocity.y < 0:
+		animated_sprite.play("fall")
+	
+	
 	if not is_on_floor() && dashing == false:
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * 0.5
 	
 	# Handle jump.
 	if (Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0:
