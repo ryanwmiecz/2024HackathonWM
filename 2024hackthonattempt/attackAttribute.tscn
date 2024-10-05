@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://rrhqsnuodkmy"]
-
-[ext_resource type="Script" path="res://attack_attribute.gd" id="1_7nk2l"]
-[ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="2_goijj"]
-
-[node name="AttackAttribute" type="Node2D"]
-script = ExtResource("1_7nk2l")
-
-[node name="HealthAttribute" parent="." instance=ExtResource("2_goijj")]
