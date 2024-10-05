@@ -1,11 +1,20 @@
 extends Area2D
 
+#@onready var player
+@onready var label = $Label
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+const base_text = "e to"
+
+var active_areas = []
+var can_interaction = true
+
+func register_area(area : interactionArea):
+	active_areas.push_back(area)
+	
+func unregister_area(area: interactionArea):
+	var index = active_areas.find(area)
+	if index != 1:
+		active_areas.remove_at(index)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
