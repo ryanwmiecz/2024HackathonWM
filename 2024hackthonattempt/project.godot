@@ -13,7 +13,7 @@ config_version=5
 config/name="2024HackthonAttempt"
 run/main_scene="res://Levels/scene_selector.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+<<<<<<<Updatedupstreamconfig/icon="res://icon.svg"
 
 [autoload]
 
