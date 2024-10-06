@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cpr8s7quixop3"]
+[gd_scene load_steps=97 format=3 uid="uid://bvt62owke77mv"]
 
 [ext_resource type="Script" path="res://Entities/PlayerController.gd" id="1_2swqa"]
 [ext_resource type="Texture2D" uid="uid://b2qmqak6o7u84" path="res://Art/satiro-Sheet v1.1.png" id="2_fbyir"]
