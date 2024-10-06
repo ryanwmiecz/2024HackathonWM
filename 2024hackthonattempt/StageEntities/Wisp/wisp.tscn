@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://brjjirogofy4f"]
+
+[ext_resource type="Texture2D" uid="uid://ditroyigwe5pc" path="res://Art/wisp.png" id="1_hvgaf"]
+[ext_resource type="Script" path="res://Entities/Wisp.gd" id="2_qfmi8"]
+[ext_resource type="AudioStream" uid="uid://b20xu00t3n1r4" path="res://StageEntities/Wisp/Activate Glyph Forcefield.wav" id="3_iopr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmqug"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlwdj"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw8ey"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojgs6"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pwkk"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3878h"]
+atlas = ExtResource("1_hvgaf")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fwk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmqug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlwdj")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw8ey")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojgs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pwkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3878h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihrqo"]
+radius = 3.53553
+
+[node name="Wisp" type="AnimatedSprite2D" node_paths=PackedStringArray("cooldown_timer", "sprite")]
+z_index = -1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6fwk8")
+animation = &"Idle"
+script = ExtResource("2_qfmi8")
+cooldown_timer = NodePath("Cooldown")
+sprite = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_ihrqo")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iopr7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
