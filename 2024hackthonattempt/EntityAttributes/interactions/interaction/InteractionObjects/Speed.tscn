@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnlvy0viyind6"]
+[gd_scene load_steps=7 format=3 uid="uid://cnlvy0viyind6"]
 
 [ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="1_aague"]
 [ext_resource type="Script" path="res://EntityAttributes/interactions/interaction/InteractionObjects/speed.gd" id="1_cxheb"]
-[ext_resource type="Texture2D" uid="uid://b4qi5lx5nrmwg" path="res://Art/Screenshot 2024-09-30 100837.png" id="2_uxmyf"]
+[ext_resource type="Texture2D" uid="uid://u7ix0uwt0q32" path="res://Art/free.png" id="2_e372v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qddeb"]
+atlas = ExtResource("2_e372v")
+region = Rect2(30.5, 209.25, 37.5, 46.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgsep"]
 size = Vector2(49, 53)
@@ -15,8 +19,7 @@ script = ExtResource("1_cxheb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(14.5, -20.5)
-scale = Vector2(0.0542763, 0.0920245)
-texture = ExtResource("2_uxmyf")
+texture = SubResource("AtlasTexture_qddeb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14.5, -16.5)
