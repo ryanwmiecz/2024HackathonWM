@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://caeorccx605cp"]
+[gd_scene load_steps=13 format=4 uid="uid://caeorccx605cp"]
 
+[ext_resource type="Texture2D" path="res://Art/free.png" id="3_acxt8"]
 [ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="4_otkbh"]
 [ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="5_ji8mi"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="6_hgpfi"]
@@ -191,6 +192,93 @@ texture_region_size = Vector2i(18, 18)
 17:8/0 = 0
 18:8/0 = 0
 19:8/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4v53g"]
+texture = ExtResource("3_acxt8")
+0:13/size_in_atlas = Vector2i(2, 3)
+0:13/0 = 0
+2:13/size_in_atlas = Vector2i(2, 3)
+2:13/0 = 0
+4:13/size_in_atlas = Vector2i(2, 3)
+4:13/0 = 0
+2:10/size_in_atlas = Vector2i(2, 2)
+2:10/0 = 0
+0:10/size_in_atlas = Vector2i(2, 2)
+0:10/0 = 0
+18:10/size_in_atlas = Vector2i(2, 2)
+18:10/0 = 0
+20:10/size_in_atlas = Vector2i(2, 2)
+20:10/0 = 0
+22:10/size_in_atlas = Vector2i(2, 2)
+22:10/0 = 0
+11:4/size_in_atlas = Vector2i(2, 4)
+11:4/0 = 0
+13:5/size_in_atlas = Vector2i(1, 2)
+13:5/0 = 0
+10:4/0 = 0
+6:4/size_in_atlas = Vector2i(4, 4)
+6:4/0 = 0
+14:4/size_in_atlas = Vector2i(4, 4)
+14:4/0 = 0
+19:4/size_in_atlas = Vector2i(4, 2)
+19:4/0 = 0
+0:7/size_in_atlas = Vector2i(6, 3)
+0:7/0 = 0
+5:6/0 = 0
+7:9/size_in_atlas = Vector2i(2, 3)
+7:9/0 = 0
+11:9/size_in_atlas = Vector2i(2, 3)
+11:9/0 = 0
+13:11/0 = 0
+10:11/0 = 0
+15:9/size_in_atlas = Vector2i(2, 3)
+15:9/0 = 0
+17:11/0 = 0
+20:2/size_in_atlas = Vector2i(2, 2)
+20:2/0 = 0
+22:2/size_in_atlas = Vector2i(2, 2)
+22:2/0 = 0
+21:0/size_in_atlas = Vector2i(2, 2)
+21:0/0 = 0
+20:1/0 = 0
+6:0/size_in_atlas = Vector2i(4, 4)
+6:0/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+19:1/0 = 0
+18:1/0 = 0
+17:1/0 = 0
+16:1/0 = 0
+15:1/0 = 0
+14:1/0 = 0
+13:1/0 = 0
+12:1/0 = 0
+11:1/0 = 0
+10:1/0 = 0
+19:0/0 = 0
+18:0/0 = 0
+17:0/0 = 0
+16:0/0 = 0
+15:0/0 = 0
+14:0/0 = 0
+13:0/0 = 0
+12:0/0 = 0
+11:0/0 = 0
+10:0/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5m61"]
 texture = ExtResource("6_tihmu")
@@ -1313,6 +1401,7 @@ terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_j8b10")
 sources/2 = SubResource("TileSetAtlasSource_k5m61")
 sources/3 = SubResource("TileSetAtlasSource_3sevj")
+sources/1 = SubResource("TileSetAtlasSource_4v53g")
 
 [node name="MainScene" type="Node2D"]
 
