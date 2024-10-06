@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="8_sm68y"]
 [ext_resource type="PackedScene" uid="uid://c22u2hihykgjd" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
 [ext_resource type="PackedScene" path="res://StageEntities/music_manager.tscn" id="10_j0moq"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Levels/pause.tscn" id="11_7okcj"]
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_co2uk"]
 texture = ExtResource("3_qt2ut")
