@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=4 uid="uid://caeorccx605cp"]
+[gd_scene load_steps=16 format=4 uid="uid://caeorccx605cp"]
 
 [ext_resource type="Texture2D" uid="uid://u7ix0uwt0q32" path="res://Art/free.png" id="3_acxt8"]
-[ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="4_otkbh"]
+[ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="4_otkbh"]
 [ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="5_ji8mi"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="6_hgpfi"]
 [ext_resource type="PackedScene" uid="uid://brjjirogofy4f" path="res://StageEntities/Wisp/wisp.tscn" id="6_jsjne"]
 [ext_resource type="Texture2D" uid="uid://ch11d0bys83jc" path="res://Art/Terrain_and_Props.png" id="6_tihmu"]
 [ext_resource type="Texture2D" uid="uid://l8u148leheo4" path="res://Art/tileset.png" id="7_3he3s"]
+[ext_resource type="PackedScene" uid="uid://c22u2hihykgjd" path="res://StageEntities/world_text.tscn" id="8_hkf0n"]
+[ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="9_lw475"]
+[ext_resource type="PackedScene" uid="uid://b1pyytfex1381" path="res://StageEntities/music_manager.tscn" id="10_vnqh6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8b10"]
 texture = ExtResource("6_hgpfi")
@@ -1420,3 +1423,68 @@ position = Vector2(1713, -189)
 
 [node name="Wisp2" parent="." instance=ExtResource("6_jsjne")]
 position = Vector2(1734, -223)
+
+[node name="World Text" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 656.0
+offset_top = 391.0
+offset_right = 881.0
+offset_bottom = 424.0
+text = "This Game Was Originally
+Supposed to be Like Dead Cells"
+
+[node name="World Text2" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 345.0
+offset_top = 359.0
+offset_right = 472.0
+offset_bottom = 382.0
+text = "But We Decided to Make A Regular
+Platformer Due To TIme"
+
+[node name="World Text3" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 209.0
+offset_top = 228.0
+offset_right = 336.0
+offset_bottom = 251.0
+text = "This Level is a Debug Stage from
+one of the devs."
+
+[node name="World Text4" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 675.0
+offset_top = 107.0
+offset_right = 802.0
+offset_bottom = 130.0
+text = "As Such There are a
+lot of weird colliders"
+
+[node name="World Text5" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 1007.0
+offset_top = 40.0
+offset_right = 1186.0
+offset_bottom = 91.0
+text = "During Tribehacks 9 we
+made a very bad game
+called Rat Slayer"
+
+[node name="World Text6" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 1512.0
+offset_top = -111.0
+offset_right = 1639.0
+offset_bottom = -88.0
+text = "We Think this game is
+Much Better"
+
+[node name="World Text7" parent="." instance=ExtResource("8_hkf0n")]
+offset_left = 1327.0
+offset_top = -405.0
+offset_right = 1487.0
+offset_bottom = -382.0
+text = "Thanks For Playing!!!"
+
+[node name="Wisp3" parent="." instance=ExtResource("6_jsjne")]
+position = Vector2(1701, -244)
+
+[node name="GreenSprite" parent="." instance=ExtResource("9_lw475")]
+position = Vector2(1199, -288)
+next_level = "res://Levels/real_main_mennu.tscn"
+
+[node name="Music Manager" parent="." instance=ExtResource("10_vnqh6")]

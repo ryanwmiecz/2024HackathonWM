@@ -12,4 +12,5 @@ func _ready():
 func _command():
 	player.JUMP_VELOCITY = -1
 	player.DASH_VELOCITY = 2000
+	player.can_dash = true
 	

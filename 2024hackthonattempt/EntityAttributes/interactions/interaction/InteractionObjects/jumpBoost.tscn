@@ -12,7 +12,7 @@ region = Rect2(0, 210.75, 31.5, 45.25)
 size = Vector2(241, 235)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlvrp"]
-radius = 448.112
+radius = 49.2544
 
 [node name="JumpBoost" type="StaticBody2D"]
 script = ExtResource("1_q3fxu")
