@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1pyytfex1381"]
+
+[ext_resource type="Script" path="res://Levels/music_manager.gd" id="1_xq22j"]
+[ext_resource type="AudioStream" uid="uid://q54ekcedemf1" path="res://Art/Music/HauntedLullabiesofJapan_EdoLullaby.mp3" id="2_af12x"]
+[ext_resource type="AudioStream" uid="uid://jwag0wuq1dao" path="res://Art/Music/HauntedLullabiesofJapan_Kagome Kagome2.mp3" id="3_uj7if"]
+[ext_resource type="AudioStream" uid="uid://bpmf1iiu4knc0" path="res://Art/Music/HauntedLullabiesofJapan_Oboro.mp3" id="4_veif4"]
+[ext_resource type="AudioStream" uid="uid://blban5ctu4m6q" path="res://Art/Music/HauntedLullabiesofJapan_TakedaLullaby II.mp3" id="5_oj7q5"]
+[ext_resource type="AudioStream" uid="uid://b6ckd0ltxmewe" path="res://Art/Music/HauntedLullabiesofJapan_Toryanse_.mp3" id="6_oun7n"]
+
+[node name="Music Manager" type="Node"]
+script = ExtResource("1_xq22j")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_af12x")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uj7if")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_veif4")
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_oj7q5")
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_oun7n")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D2" to="." method="_on_audio_stream_player_2d_2_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D3" to="." method="_on_audio_stream_player_2d_3_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D4" to="." method="_on_audio_stream_player_2d_4_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D5" to="." method="_on_audio_stream_player_2d_5_finished"]
