@@ -9,6 +9,7 @@ var active_areas = []
 var can_interaction = true
 var interacted = false
 
+
 func register_area(area : interactionArea):
 	if interacted ==true:
 		return 0
