@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bc803yp88p0bp"]
+[gd_scene load_steps=9 format=4 uid="uid://bc803yp88p0bp"]
 
 [ext_resource type="TileSet" uid="uid://cccv1crjsjghj" path="res://Art/tilesets/Levels.tres" id="1_l0dlu"]
 [ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="2_3p8cf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="5_r0nc5"]
 [ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="6_ibc4f"]
 [ext_resource type="PackedScene" path="res://Levels/pause.tscn" id="7_0o70i"]
+[ext_resource type="PackedScene" uid="uid://b1pyytfex1381" path="res://StageEntities/music_manager.tscn" id="8_u2pkd"]
 
 [node name="Level2" type="Node2D"]
 
@@ -37,3 +38,5 @@ offset = Vector2(-300, 0)
 transform = Transform2D(1, 0, 0, 1, -300, 0)
 
 [node name="Pause" parent="." instance=ExtResource("7_0o70i")]
+
+[node name="Music Manager" parent="." instance=ExtResource("8_u2pkd")]
