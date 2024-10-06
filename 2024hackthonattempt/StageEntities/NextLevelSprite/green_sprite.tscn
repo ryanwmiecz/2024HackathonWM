@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxvrn44slnyrx"]
+
+[ext_resource type="Texture2D" uid="uid://dvbju2sdk57rp" path="res://Art/End Sprite-Sheet.png" id="1_5dtwa"]
+[ext_resource type="Script" path="res://Levels/GreenSprite.gd" id="2_bii1n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opevm"]
+atlas = ExtResource("1_5dtwa")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rko1"]
+atlas = ExtResource("1_5dtwa")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jblp6"]
+atlas = ExtResource("1_5dtwa")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl7w4"]
+atlas = ExtResource("1_5dtwa")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6q3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opevm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rko1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jblp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl7w4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lhm4s"]
+
+[node name="GreenSprite" type="AnimatedSprite2D"]
+position = Vector2(1627, 66)
+sprite_frames = SubResource("SpriteFrames_j6q3e")
+autoplay = "default"
+script = ExtResource("2_bii1n")
+next_level = "res://Entities/emily_debug_scene.tscn"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lhm4s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

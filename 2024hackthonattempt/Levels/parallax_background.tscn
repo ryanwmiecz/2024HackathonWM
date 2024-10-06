@@ -44,5 +44,5 @@ motion_scale = Vector2(0.9, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
 position = Vector2(922, 161)
-scale = Vector2(2.84103, 2.96994)
+scale = Vector2(3.18673, 3.33133)
 texture = ExtResource("4_ikbxq")
