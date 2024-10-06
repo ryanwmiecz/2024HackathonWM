@@ -1,16 +1,17 @@
-[gd_scene load_steps=16 format=4 uid="uid://c7ebcbwj4gc4n"]
+[gd_scene load_steps=17 format=4 uid="uid://ccet83nr20p5"]
 
 [ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="1_3l7fd"]
-[ext_resource type="PackedScene" uid="uid://qsc2xuh70s0n" path="res://Levels/level_map.tscn" id="2_ldurt"]
+[ext_resource type="PackedScene" path="res://Levels/level_map.tscn" id="2_ldurt"]
 [ext_resource type="Texture2D" uid="uid://ch11d0bys83jc" path="res://Art/Terrain_and_Props.png" id="3_qt2ut"]
 [ext_resource type="PackedScene" uid="uid://brjjirogofy4f" path="res://StageEntities/Wisp/wisp.tscn" id="4_4cjnd"]
 [ext_resource type="Texture2D" uid="uid://cc8yktnrg4sbt" path="res://Art/Assets.png" id="4_tpxpq"]
 [ext_resource type="Texture2D" uid="uid://l8u148leheo4" path="res://Art/tileset.png" id="5_5f7n5"]
 [ext_resource type="PackedScene" uid="uid://bpigmqwjn2k07" path="res://StageEntities/SpawnStatue/spawn.tscn" id="6_ssa57"]
-[ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="7_8vikj"]
+[ext_resource type="PackedScene" path="res://Levels/parallax_background.tscn" id="7_8vikj"]
 [ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="8_sm68y"]
-[ext_resource type="PackedScene" uid="uid://c22u2hihykgjd" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
+[ext_resource type="PackedScene" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
 [ext_resource type="PackedScene" path="res://StageEntities/music_manager.tscn" id="10_j0moq"]
+[ext_resource type="PackedScene" uid="uid://cpy747qd8tgvv" path="res://Levels/pause.tscn" id="11_7okcj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_co2uk"]
 texture = ExtResource("3_qt2ut")
@@ -982,5 +983,7 @@ offset_right = 1631.0
 offset_bottom = 16.0
 text = "Collect the Green
 Sprite to Progress"
+
+[node name="Pause" parent="." instance=ExtResource("11_7okcj")]
 
 [node name="Music Manager" parent="." instance=ExtResource("10_j0moq")]
