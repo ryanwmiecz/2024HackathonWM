@@ -48,9 +48,10 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
-	if ((Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0) && !dead:
+	if (Input.is_action_just_pressed("ui_accept") && jump_count > 0) && !dead:
 		jump_noise.play()
-		jump_count -= 1
+		if !coyote_timer.is_stopped():
+			jump_count -= 1
 		if is_on_floor() || !coyote_timer.is_stopped():
 			velocity.y = JUMP_VELOCITY
 		else:
