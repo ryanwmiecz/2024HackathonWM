@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dun3c44uk7quc" path="res://Art/alagard.ttf" id="6_jl0bf"]
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -101,7 +102,12 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer3/VBoxContainer"]
 visible = false
 layout_mode = 2
-text = "Stinky grill ass hoe named aaron did some shit ig"
+text = "Creators: Ryan Miecznikowski, Aaron Nussbaum, and Emily Wasowski.
+Background Assets:
+Character Sprites:
+Terrain:
+Decorations:
+Sound Files:"
 
 [node name="BackCredits" type="Button" parent="HBoxContainer3/VBoxContainer"]
 visible = false
