@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="1_aague"]
 [ext_resource type="Script" path="res://EntityAttributes/interactions/interaction/InteractionObjects/speed.gd" id="1_cxheb"]
-[ext_resource type="Texture2D" uid="uid://b4qi5lx5nrmwg" path="res://Levels/Screenshot 2024-09-30 100837.png" id="2_uxmyf"]
+[ext_resource type="Texture2D" uid="uid://b4qi5lx5nrmwg" path="res://Art/Screenshot 2024-09-30 100837.png" id="2_uxmyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgsep"]
 size = Vector2(49, 53)
