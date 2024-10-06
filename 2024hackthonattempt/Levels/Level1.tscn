@@ -932,8 +932,6 @@ offset = Vector2(-408.98, -150)
 scale = Vector2(1.03, 0.6)
 transform = Transform2D(1.03, 0, 0, 0.6, -408.98, -150)
 
-[node name="GreenSprite" parent="." instance=ExtResource("8_sm68y")]
-
 [node name="World Text" parent="." instance=ExtResource("9_o0ecv")]
 
 [node name="World Text2" parent="." instance=ExtResource("9_o0ecv")]
@@ -984,3 +982,7 @@ text = "Collect the Green
 Sprite to Progress"
 
 [node name="Music Manager" parent="." instance=ExtResource("10_j0moq")]
+
+[node name="GreenSprite" parent="." instance=ExtResource("8_sm68y")]
+position = Vector2(1574, 58)
+next_level = "res://Levels/Level2.tscn"
