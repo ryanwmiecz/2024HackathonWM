@@ -16,6 +16,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	get_tree().paused = true
 	$"HBoxContainer3".visible = true
 	$"HBoxContainer3/VBoxContainer/Label".visible = true
 	$"HBoxContainer/VBoxContainer/Button2".visible = false
@@ -25,6 +26,7 @@ func _on_button_2_pressed() -> void:
 	$"HBoxContainer3/VBoxContainer".visible = true
 
 func _on_back_credits_pressed() -> void:
+	get_tree().paused = false
 	$"HBoxContainer3".visible = false
 	$"HBoxContainer3/VBoxContainer/Label".visible = false
 	$"HBoxContainer/VBoxContainer/Button2".visible = true
@@ -32,3 +34,4 @@ func _on_back_credits_pressed() -> void:
 	$"HBoxContainer3/VBoxContainer/BackCredits".visible = false
 	$"HBoxContainer2/Title".visible = true
 	$"HBoxContainer3/VBoxContainer".visible = false
+	
