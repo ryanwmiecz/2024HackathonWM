@@ -700,5 +700,10 @@ stream = ExtResource("5_7wrfo")
 [node name="Bleat" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_mtpcx")
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(2, 9)
+target_position = Vector2(18, 0)
+collision_mask = 4
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

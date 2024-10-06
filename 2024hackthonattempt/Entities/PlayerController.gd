@@ -9,6 +9,7 @@ var dashing := false
 var dash_time = 0.1
 var spawn := Vector2(0,0)
 var dead = false
+var on_slope = false
 
 @export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
@@ -16,13 +17,18 @@ var dead = false
 @onready var jump_noise = $Jump
 @onready var death_noise = $Die
 @onready var bleat_noise = $Bleat
+@onready var raycast = $RayCast2D
 
 func _physics_process(delta):
 	# Add the gravity.
 	if velocity.x > 0:
 		animated_sprite.flip_h = false
+		raycast.target_position.x = 5
 	elif velocity.x < 0:
 		animated_sprite.flip_h = true
+		raycast.target_position.x = -5
+	
+	
 	
 	if dead:
 		animated_sprite.play("die")
@@ -81,6 +87,11 @@ func _physics_process(delta):
 			velocity.y = 0
 			dash_time -= delta
 	var was_on_floor = is_on_floor()
+	
+	var detection = raycast.get_collider()
+	if detection != null:
+		print("onslope")
+		velocity.x *= 2
 	
 	move_and_slide()
 	
