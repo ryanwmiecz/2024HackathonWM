@@ -4,6 +4,7 @@ var active = true
 
 @export var cooldown_timer : Timer
 @export var sprite : AnimatedSprite2D
+@onready var collect_sound = $Collect
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -19,6 +20,7 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body == get_tree().get_first_node_in_group("Player") && active:
+		collect_sound.play()
 		body.jump_count += 1
 		active = false
 		cooldown_timer.start()
