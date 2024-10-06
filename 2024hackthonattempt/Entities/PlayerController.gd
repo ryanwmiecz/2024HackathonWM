@@ -42,13 +42,13 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	
 	# Handle jump.
-	if (Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0:
+	if ((Input.is_action_just_pressed("ui_accept") || !coyote_timer.is_stopped()) && jump_count > 0) && !dead:
 		jump_noise.play()
 		jump_count -= 1
 		if is_on_floor() || !coyote_timer.is_stopped():
 			velocity.y = JUMP_VELOCITY
 		else:
-			velocity.y = JUMP_VELOCITY / 1.5
+			velocity.y = JUMP_VELOCITY / 1.2
 	
 	if (Input.is_action_just_pressed("bleat") && velocity == Vector2.ZERO && dead == false):
 		bleat_noise.play()
@@ -59,6 +59,9 @@ func _physics_process(delta):
 		dashing = true
 		print(velocity.x)
 		dash_time = 0.1
+	
+	if Input.is_action_just_pressed('reset'):
+		Die()
 	
 	if is_on_floor():
 		jump_count = 1
@@ -86,9 +89,8 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	print("die")
-	death_noise.play()
-	dead = true
+	Die()
+	
 
 
 func _on_animated_sprite_2d_animation_finished():
@@ -96,4 +98,8 @@ func _on_animated_sprite_2d_animation_finished():
 		self.position = spawn
 		dead = false
 	pass # Replace with function body.
+
+func Die():
+	death_noise.play()
+	dead = true
 	
