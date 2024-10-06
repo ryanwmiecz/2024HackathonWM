@@ -114,8 +114,8 @@ Character Sprites: Character Satyr - Lucky Loops (Coriander)
 Terrain: Fantasy Swamp Forest Tileset - The Flavare
 Decorations: Stringstar Fields - Trixielized (lights, trees), 
                         Fantasy Swamp Forest Tileset (rocks, mushrooms)
-Obstacles: thingy - person (brambles)
-Sound Files: misc places"
+Obstacles: Legacy Adventure Pack - Forest  - Anokolisa (brambles)
+Sound Files: Haunted Lullabies of Japan BGM Vol 1. - Atelier Magicae"
 
 [node name="BackCredits" type="Button" parent="HBoxContainer3/VBoxContainer"]
 visible = false
