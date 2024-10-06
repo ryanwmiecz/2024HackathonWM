@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cme8t3stdkd0q"]
+[gd_scene load_steps=5 format=3 uid="uid://bboe7r44do58m"]
 
 [ext_resource type="Texture2D" uid="uid://dl646mejabi7g" path="res://Art/parallax-demon-woods-bg.png" id="1_xjlmv"]
 [ext_resource type="Texture2D" uid="uid://8eoderlm5ugi" path="res://Art/parallax-demon-woods-far-trees.png" id="2_8hg2p"]
