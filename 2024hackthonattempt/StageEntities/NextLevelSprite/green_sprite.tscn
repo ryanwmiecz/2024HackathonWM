@@ -42,7 +42,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lhm4s"]
 
 [node name="GreenSprite" type="AnimatedSprite2D"]
-position = Vector2(1627, 66)
 sprite_frames = SubResource("SpriteFrames_j6q3e")
 autoplay = "default"
 script = ExtResource("2_bii1n")
