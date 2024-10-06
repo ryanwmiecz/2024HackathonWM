@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-var SPEED = 200.0
+var SPEED = 180.0
 var JUMP_VELOCITY = -300.0
-var DASH_VELOCITY = 600
+var DASH_VELOCITY = 800
 var jump_count = 1
 var dashing := false
-var dash_time = 0.1
+var dash_time = 0.2
 var spawn := Vector2(0,0)
 var dead = false
 var on_slope = false
@@ -50,12 +50,11 @@ func _physics_process(delta):
 	# Handle jump.
 	if (Input.is_action_just_pressed("ui_accept") && jump_count > 0) && !dead:
 		jump_noise.play()
-		if !coyote_timer.is_stopped():
-			jump_count -= 1
+		jump_count -= 1
 		if is_on_floor() || !coyote_timer.is_stopped():
 			velocity.y = JUMP_VELOCITY
 		else:
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY / 1.2
 	
 	if (Input.is_action_just_pressed("bleat") && velocity == Vector2.ZERO && dead == false):
 		bleat_noise.play()
@@ -70,7 +69,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed('reset'):
 		Die()
 	
-	if is_on_floor():
+	if is_on_floor() || !coyote_timer.is_stopped():
 		jump_count = 1
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -87,17 +86,22 @@ func _physics_process(delta):
 			velocity.x = direction * DASH_VELOCITY
 			velocity.y = 0
 			dash_time -= delta
-	var was_on_floor = is_on_floor()
+			
 	
 	var detection = raycast.get_collider()
 	if detection != null:
 		print("onslope")
 		velocity.x *= 2
+	var was_on_floor = is_on_floor()
+	
 	
 	move_and_slide()
 	
-	if was_on_floor && !is_on_floor:
+	if was_on_floor && !is_on_floor():
+		print("falling")
 		coyote_timer.start()
+	
+	
 
 
 func _on_area_2d_body_entered(body):
@@ -115,3 +119,7 @@ func Die():
 	death_noise.play()
 	dead = true
 	
+
+
+func _on_coyote_timer_timeout():
+	pass # Replace with function body.
