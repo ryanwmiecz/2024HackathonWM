@@ -5,10 +5,11 @@
 [ext_resource type="TileSet" uid="uid://cccv1crjsjghj" path="res://Art/tilesets/Levels.tres" id="3_on45q"]
 [ext_resource type="PackedScene" uid="uid://brjjirogofy4f" path="res://StageEntities/Wisp/wisp.tscn" id="4_4cjnd"]
 [ext_resource type="PackedScene" uid="uid://bpigmqwjn2k07" path="res://StageEntities/SpawnStatue/spawn.tscn" id="6_ssa57"]
-[ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="7_8vikj"]
+[ext_resource type="PackedScene" path="res://Levels/parallax_background.tscn" id="7_8vikj"]
 [ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="8_sm68y"]
-[ext_resource type="PackedScene" uid="uid://c22u2hihykgjd" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
-[ext_resource type="PackedScene" uid="uid://b1pyytfex1381" path="res://StageEntities/music_manager.tscn" id="10_j0moq"]
+[ext_resource type="PackedScene" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
+[ext_resource type="PackedScene" path="res://StageEntities/music_manager.tscn" id="10_j0moq"]
+[ext_resource type="PackedScene" uid="uid://cpy747qd8tgvv" path="res://Levels/pause.tscn" id="11_7okcj"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(0, 2)
@@ -87,3 +88,5 @@ text = "Collect the Green
 Sprite to Progress"
 
 [node name="Music Manager" parent="." instance=ExtResource("10_j0moq")]
+
+[node name="Pause" parent="." instance=ExtResource("11_7okcj")]
