@@ -43,25 +43,30 @@ scale = Vector2(2.09291, 2.47426)
 texture = ExtResource("3_mcpa3")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_right = 360.0
-offset_bottom = 156.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 650.0
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_jl0bf")
 theme_override_font_sizes/font_size = 52
 text = "Start"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_jl0bf")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
