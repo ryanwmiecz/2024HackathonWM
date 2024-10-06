@@ -26,6 +26,7 @@ func _on_button_2_pressed() -> void:
 	$"HBoxContainer3/VBoxContainer".visible = true
 
 func _on_back_credits_pressed() -> void:
+	
 	$"HBoxContainer/VBoxContainer/Button3".visible = true
 	$"HBoxContainer3".visible = false
 	$"HBoxContainer3/VBoxContainer/Label".visible = false
