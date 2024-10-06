@@ -30,6 +30,7 @@ position = Vector2(1128, -49)
 
 [node name="GreenSprite" parent="." instance=ExtResource("5_r0nc5")]
 position = Vector2(1251, 19)
+next_level = "res://Levels/Level3.tscn"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_ibc4f")]
 offset = Vector2(-300, 0)
