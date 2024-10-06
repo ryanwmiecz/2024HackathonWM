@@ -69,4 +69,21 @@ theme_override_fonts/font = ExtResource("6_jl0bf")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 169.0
+offset_right = 1149.0
+offset_bottom = 209.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.568627, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_jl0bf")
+theme_override_font_sizes/font_size = 70
+text = "Coriander's Quest"
+
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
