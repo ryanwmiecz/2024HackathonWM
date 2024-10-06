@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c7ebcbwj4gc4n"]
+[gd_scene load_steps=13 format=4 uid="uid://c7ebcbwj4gc4n"]
 
 [ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="1_3l7fd"]
 [ext_resource type="PackedScene" uid="uid://qsc2xuh70s0n" path="res://Levels/level_map.tscn" id="2_ldurt"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cc8yktnrg4sbt" path="res://Art/Assets.png" id="4_tpxpq"]
 [ext_resource type="PackedScene" uid="uid://bpigmqwjn2k07" path="res://StageEntities/SpawnStatue/spawn.tscn" id="6_ssa57"]
 [ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="7_8vikj"]
-[ext_resource type="Texture2D" uid="uid://dvbju2sdk57rp" path="res://Art/End Sprite-Sheet.png" id="8_o4ru3"]
-[ext_resource type="Script" path="res://Levels/GreenSprite.gd" id="9_522sg"]
+[ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="8_sm68y"]
+[ext_resource type="PackedScene" uid="uid://c22u2hihykgjd" path="res://StageEntities/world_text.tscn" id="9_o0ecv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_co2uk"]
 texture = ExtResource("3_qt2ut")
@@ -755,44 +755,6 @@ physics_layer_1/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_co2uk")
 sources/1 = SubResource("TileSetAtlasSource_sfajt")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_opevm"]
-atlas = ExtResource("8_o4ru3")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rko1"]
-atlas = ExtResource("8_o4ru3")
-region = Rect2(8, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jblp6"]
-atlas = ExtResource("8_o4ru3")
-region = Rect2(16, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl7w4"]
-atlas = ExtResource("8_o4ru3")
-region = Rect2(24, 0, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j6q3e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_opevm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rko1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jblp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cl7w4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lhm4s"]
-
 [node name="Level1" type="Node2D"]
 position = Vector2(0, 2)
 
@@ -817,16 +779,53 @@ offset = Vector2(-408.98, -150)
 scale = Vector2(1.03, 0.6)
 transform = Transform2D(1.03, 0, 0, 0.6, -408.98, -150)
 
-[node name="GreenSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1627, 66)
-sprite_frames = SubResource("SpriteFrames_j6q3e")
-autoplay = "default"
-script = ExtResource("9_522sg")
-next_level = "res://Entities/emily_debug_scene.tscn"
+[node name="GreenSprite" parent="." instance=ExtResource("8_sm68y")]
 
-[node name="Area2D" type="Area2D" parent="GreenSprite"]
+[node name="World Text" parent="." instance=ExtResource("9_o0ecv")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenSprite/Area2D"]
-shape = SubResource("CircleShape2D_lhm4s")
+[node name="World Text2" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 118.0
+offset_top = -94.0
+offset_right = 344.0
+offset_bottom = -71.0
+text = "Brambles Hurt! 'Space' to Jump"
 
-[connection signal="body_entered" from="GreenSprite/Area2D" to="GreenSprite" method="_on_area_2d_body_entered"]
+[node name="World Text3" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 531.0
+offset_top = -105.0
+offset_right = 747.0
+offset_bottom = -54.0
+text = "You can Double Jump
+Or press 'Z' to dash in the air
+But not both!"
+
+[node name="World Text4" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 797.0
+offset_top = -143.0
+offset_right = 1003.0
+offset_bottom = -110.0
+text = "You will respawn at the last
+Active Faun Altar"
+
+[node name="World Text5" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 982.0
+offset_top = -5.0
+offset_right = 1127.0
+offset_bottom = 28.0
+text = "Wisps Give an 
+Extra Jump or Dash"
+
+[node name="World Text6" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 1211.0
+offset_top = 103.0
+offset_right = 1338.0
+offset_bottom = 126.0
+text = "Press 'R' to Restart"
+
+[node name="World Text7" parent="." instance=ExtResource("9_o0ecv")]
+offset_left = 1504.0
+offset_top = -7.0
+offset_right = 1631.0
+offset_bottom = 16.0
+text = "Collect the Green
+Sprite to Progress"

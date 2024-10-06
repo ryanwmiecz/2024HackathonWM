@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c22u2hihykgjd"]
+
+[ext_resource type="FontFile" uid="uid://dun3c44uk7quc" path="res://Art/alagard.ttf" id="1_natbi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q2tp8"]
+font = ExtResource("1_natbi")
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.644781, 0.281536, 0, 0.835294)
+
+[node name="World Text" type="Label"]
+offset_left = -56.0
+offset_top = -47.0
+offset_right = 71.0
+offset_bottom = -24.0
+text = "This Is Coriander"
+label_settings = SubResource("LabelSettings_q2tp8")
