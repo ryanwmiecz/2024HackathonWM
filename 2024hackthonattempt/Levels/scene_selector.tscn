@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scene_selector.gd" id="1_f860y"]
 
-[node name="SceneSelector" type="Control"]
+[node name="SceneSelector2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
