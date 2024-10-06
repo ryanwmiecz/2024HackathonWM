@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://caeorccx605cp"]
 
-[ext_resource type="Texture2D" path="res://Art/free.png" id="3_acxt8"]
+[ext_resource type="Texture2D" uid="uid://u7ix0uwt0q32" path="res://Art/free.png" id="3_acxt8"]
 [ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="4_otkbh"]
 [ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="5_ji8mi"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="6_hgpfi"]
