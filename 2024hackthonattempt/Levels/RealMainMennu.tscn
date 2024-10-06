@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx2q0175sndn1"]
+
+[ext_resource type="Script" path="res://Levels/parallax_background.gd" id="1_5fop7"]
+[ext_resource type="Texture2D" uid="uid://8eoderlm5ugi" path="res://Art/parallax-demon-woods-far-trees.png" id="1_l86hj"]
+[ext_resource type="Script" path="res://Levels/real_main_mennu.gd" id="1_ogdj2"]
+[ext_resource type="Texture2D" uid="uid://cap76b87sdc6q" path="res://Art/parallax-demon-woods-mid-trees.png" id="2_4i2fv"]
+[ext_resource type="Texture2D" uid="uid://dny6ox73axoev" path="res://Art/parallax-demon-woods-close-trees.png" id="3_mcpa3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ogdj2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_5fop7")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2.05912, 2.41176)
+texture = ExtResource("1_l86hj")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2(1.98818, 2.36765)
+texture = ExtResource("2_4i2fv")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(1.96453, 2.37132)
+texture = ExtResource("3_mcpa3")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 118.0
+offset_right = 902.0
+offset_bottom = 360.0
+text = "TESUTO
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

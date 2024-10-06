@@ -1,11 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://b135w3c7dikyq"]
+[gd_scene load_steps=6 format=4 uid="uid://b135w3c7dikyq"]
 
-[ext_resource type="Script" path="res://Entities/emily_player_movement.gd" id="1_meble"]
-[ext_resource type="Texture2D" uid="uid://0ulndwdwe5kd" path="res://Art/10-4 hw.png" id="2_cf4my"]
-[ext_resource type="PackedScene" uid="uid://374vcktvnhfj" path="res://EntityAttributes/attackAttribute.tscn" id="3_nctvn"]
-[ext_resource type="PackedScene" uid="uid://c0x3dcxovfkdc" path="res://EntityAttributes/healthAttribute.tscn" id="4_yvxd4"]
-[ext_resource type="PackedScene" uid="uid://c413wkjwtlepm" path="res://EntityAttributes/interactions/interaction/interactionArea.tscn" id="6_gnxps"]
-[ext_resource type="Script" path="res://Levels/testthing.gd" id="7_1t2y3"]
+[ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="2_bg5x4"]
+[ext_resource type="PackedScene" uid="uid://cnlvy0viyind6" path="res://EntityAttributes/interactions/interaction/InteractionObjects/Speed.tscn" id="3_xg581"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="7_23s2l"]
 [ext_resource type="Texture2D" uid="uid://dh8d2qcnqpphu" path="res://Screenshot 2024-04-16 164120.png" id="7_jsla4"]
 
@@ -234,18 +230,5 @@ tile_set = SubResource("TileSet_nw1gr")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("7_1t2y3")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(200, 380)
-scale = Vector2(0.124365, 0.150538)
-texture = ExtResource("7_jsla4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(199, 380)
-shape = SubResource("RectangleShape2D_ckvwg")
-
-[node name="InteractionArea" parent="StaticBody2D" instance=ExtResource("6_gnxps")]
-position = Vector2(199, 381)
-action_name = "PLEASE"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/InteractionArea"]
-shape = SubResource("CircleShape2D_homen")
+[node name="BoostJumpIncrease" parent="." instance=ExtResource("3_xg581")]
+position = Vector2(808, 494)
