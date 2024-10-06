@@ -21,6 +21,7 @@ texture = ExtResource("2_cxuaj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-12.5, 8.5)
 shape = SubResource("RectangleShape2D_cm18n")
+disabled = true
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_the2v")]
 

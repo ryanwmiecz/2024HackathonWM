@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://b135w3c7dikyq"]
+[gd_scene load_steps=6 format=4 uid="uid://b135w3c7dikyq"]
 
 [ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="2_bg5x4"]
 [ext_resource type="PackedScene" uid="uid://cnlvy0viyind6" path="res://EntityAttributes/interactions/interaction/InteractionObjects/Speed.tscn" id="3_xg581"]
-[ext_resource type="PackedScene" uid="uid://vpgppxe4omsm" path="res://EntityAttributes/interactions/interaction/InteractionObjects/jumpBoost.tscn" id="4_wuuqp"]
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="7_23s2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3p8m8"]
@@ -209,6 +208,3 @@ tile_set = SubResource("TileSet_dm4d6")
 
 [node name="BoostJumpIncrease" parent="." instance=ExtResource("3_xg581")]
 position = Vector2(808, 494)
-
-[node name="JumpBoost" parent="." instance=ExtResource("4_wuuqp")]
-position = Vector2(665, 438)
