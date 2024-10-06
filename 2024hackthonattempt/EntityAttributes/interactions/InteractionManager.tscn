@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5swby48w4ggp"]
+[gd_scene load_steps=4 format=3 uid="uid://c5swby48w4ggp"]
 
 [ext_resource type="Script" path="res://EntityAttributes/interactions/interaction_manager.gd" id="1_1w1kx"]
+[ext_resource type="FontFile" uid="uid://dun3c44uk7quc" path="res://Art/alagard.ttf" id="2_2xakq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyx87"]
+font = ExtResource("2_2xakq")
+font_size = 12
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.996078, 0.513726, 0.145098, 1)
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_1w1kx")
 
 [node name="Label" type="Label" parent="."]
+z_index = 4
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -15,5 +23,6 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "[E] to interact
 "
+label_settings = SubResource("LabelSettings_tyx87")
 horizontal_alignment = 1
 vertical_alignment = 1

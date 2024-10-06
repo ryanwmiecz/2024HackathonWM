@@ -10,6 +10,7 @@ var dash_time = 0.2
 var spawn := Vector2(0,0)
 var dead = false
 var on_slope = false
+var can_dash = true
 
 @export var animated_sprite : AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
@@ -59,7 +60,7 @@ func _physics_process(delta):
 	if (Input.is_action_just_pressed("bleat") && velocity == Vector2.ZERO && dead == false):
 		bleat_noise.play()
 	
-	if Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0 && not is_on_floor():
+	if can_dash && Input.is_action_just_pressed("dash") && jump_count > 0 && velocity.x != 0 && not is_on_floor():
 		dash_noise.play()
 		jump_count -= 1
 		dashing = true
