@@ -11,5 +11,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _command():
 	player.JUMP_VELOCITY = -1
-	player.dash_time = 1
+	player.DASH_VELOCITY = 2000
 	
