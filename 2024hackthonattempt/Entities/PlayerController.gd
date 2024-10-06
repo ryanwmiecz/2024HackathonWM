@@ -54,7 +54,7 @@ func _physics_process(delta):
 		if is_on_floor() || !coyote_timer.is_stopped():
 			velocity.y = JUMP_VELOCITY
 		else:
-			velocity.y = JUMP_VELOCITY / 1.2
+			velocity.y = JUMP_VELOCITY
 	
 	if (Input.is_action_just_pressed("bleat") && velocity == Vector2.ZERO && dead == false):
 		bleat_noise.play()
