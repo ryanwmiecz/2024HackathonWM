@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://brvmn17msw6f2"]
+[gd_scene load_steps=10 format=4 uid="uid://dfblcuavnmdrg"]
 
 [ext_resource type="TileSet" uid="uid://cccv1crjsjghj" path="res://Art/tilesets/Levels.tres" id="1_hnk2x"]
-[ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="2_03t42"]
+[ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="2_03t42"]
 [ext_resource type="PackedScene" uid="uid://cnlvy0viyind6" path="res://EntityAttributes/interactions/interaction/InteractionObjects/Speed.tscn" id="3_pw334"]
 [ext_resource type="PackedScene" uid="uid://brjjirogofy4f" path="res://StageEntities/Wisp/wisp.tscn" id="4_kfc8p"]
 [ext_resource type="PackedScene" uid="uid://bpigmqwjn2k07" path="res://StageEntities/SpawnStatue/spawn.tscn" id="5_8s4ti"]
 [ext_resource type="PackedScene" uid="uid://dxvrn44slnyrx" path="res://StageEntities/NextLevelSprite/green_sprite.tscn" id="6_4qkh0"]
-[ext_resource type="PackedScene" uid="uid://b1pyytfex1381" path="res://StageEntities/music_manager.tscn" id="7_mt72t"]
-[ext_resource type="PackedScene" uid="uid://cme8t3stdkd0q" path="res://Levels/parallax_background.tscn" id="8_b24sm"]
+[ext_resource type="PackedScene" path="res://StageEntities/music_manager.tscn" id="7_mt72t"]
+[ext_resource type="PackedScene" path="res://Levels/parallax_background.tscn" id="8_b24sm"]
+[ext_resource type="PackedScene" uid="uid://cpy747qd8tgvv" path="res://Levels/pause.tscn" id="9_x88qi"]
 
 [node name="Level4" type="Node2D"]
 
@@ -67,3 +68,5 @@ position = Vector2(1538, 929)
 offset = Vector2(-500, 350)
 scale = Vector2(1.23, 1)
 transform = Transform2D(1.23, 0, 0, 1, -500, 350)
+
+[node name="Pause" parent="." instance=ExtResource("9_x88qi")]
