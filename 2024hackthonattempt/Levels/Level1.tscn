@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://c7ebcbwj4gc4n"]
+[gd_scene load_steps=10 format=4 uid="uid://c7ebcbwj4gc4n"]
 
 [ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="1_3l7fd"]
 [ext_resource type="PackedScene" uid="uid://qsc2xuh70s0n" path="res://Levels/level_map.tscn" id="2_ldurt"]
 [ext_resource type="Texture2D" uid="uid://ch11d0bys83jc" path="res://Art/Terrain_and_Props.png" id="3_qt2ut"]
 [ext_resource type="PackedScene" uid="uid://brjjirogofy4f" path="res://StageEntities/Wisp/wisp.tscn" id="4_4cjnd"]
 [ext_resource type="Texture2D" uid="uid://cc8yktnrg4sbt" path="res://Art/Assets.png" id="4_tpxpq"]
+[ext_resource type="PackedScene" uid="uid://bpigmqwjn2k07" path="res://StageEntities/SpawnStatue/spawn.tscn" id="6_ssa57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_co2uk"]
 texture = ExtResource("3_qt2ut")
@@ -766,3 +767,6 @@ position = Vector2(1066, -104)
 
 [node name="Wisp2" parent="." instance=ExtResource("4_4cjnd")]
 position = Vector2(1190, -55)
+
+[node name="Spawn" parent="." instance=ExtResource("6_ssa57")]
+position = Vector2(802, -87)

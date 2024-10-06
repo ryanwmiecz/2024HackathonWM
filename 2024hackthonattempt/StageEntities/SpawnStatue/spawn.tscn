@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpigmqwjn2k07"]
+
+[ext_resource type="Texture2D" uid="uid://duqatjg5tdvu4" path="res://Art/ReviveStatue.png" id="1_w7mld"]
+[ext_resource type="Script" path="res://StageEntities/SpawnStatue/spawn.gd" id="2_arcss"]
+[ext_resource type="AudioStream" uid="uid://cgterhxjk6rgn" path="res://StageEntities/SpawnStatue/Arcane Symbol Activate 01.wav" id="3_yb6ik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwod1"]
+atlas = ExtResource("1_w7mld")
+region = Rect2(0, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmvqs"]
+atlas = ExtResource("1_w7mld")
+region = Rect2(18, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1sus"]
+atlas = ExtResource("1_w7mld")
+region = Rect2(36, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epnv4"]
+atlas = ExtResource("1_w7mld")
+region = Rect2(54, 0, 18, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6e66"]
+atlas = ExtResource("1_w7mld")
+region = Rect2(0, 0, 18, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fwk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwod1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmvqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1sus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epnv4")
+}],
+"loop": false,
+"name": &"Activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6e66")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihrqo"]
+radius = 3.53553
+
+[node name="Spawn" type="AnimatedSprite2D" node_paths=PackedStringArray("sprite")]
+z_index = -1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6fwk8")
+animation = &"Activate"
+script = ExtResource("2_arcss")
+sprite = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_ihrqo")
+
+[node name="Activate" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yb6ik")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
