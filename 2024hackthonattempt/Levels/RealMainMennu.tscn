@@ -70,6 +70,13 @@ theme_override_fonts/font = ExtResource("6_jl0bf")
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_jl0bf")
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -1.0
@@ -95,19 +102,19 @@ offset_bottom = 648.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
-visible = false
 layout_mode = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer3/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Creators: Ryan Miecznikowski, Aaron Nussbaum, and Emily Wasowski.
-Background Assets:
-Character Sprites:
-Terrain:
-Decorations:
-Sound Files:"
+Background Assets: Demon Woods Parallax Background - aethrall
+Character Sprites: Character Satyr - Lucky Loops (Coriander)
+Terrain: Fantasy Swamp Forest Tileset - The Flavare
+Decorations: Stringstar Fields - Trixielized (lights, trees), 
+                        Fantasy Swamp Forest Tileset (rocks, mushrooms)
+Obstacles: thingy - person (brambles)
+Sound Files: misc places"
 
 [node name="BackCredits" type="Button" parent="HBoxContainer3/VBoxContainer"]
 visible = false
@@ -119,4 +126,5 @@ text = "Back"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="HBoxContainer3/VBoxContainer/BackCredits" to="." method="_on_back_credits_pressed"]
