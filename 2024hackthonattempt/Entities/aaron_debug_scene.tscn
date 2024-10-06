@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://bti5ttt2l8c57"]
+[gd_scene load_steps=15 format=4 uid="uid://bti5ttt2l8c57"]
 
 [ext_resource type="Texture2D" uid="uid://b6doghluftqpl" path="res://Art/tilemap_packed.png" id="1_ayy0t"]
-[ext_resource type="PackedScene" uid="uid://cpr8s7quixop3" path="res://Player/player.tscn" id="2_y358m"]
+[ext_resource type="PackedScene" uid="uid://bvt62owke77mv" path="res://Player/player.tscn" id="2_y358m"]
+[ext_resource type="Texture2D" uid="uid://ditroyigwe5pc" path="res://Art/wisp.png" id="3_12f77"]
+[ext_resource type="Script" path="res://Entities/Wisp.gd" id="4_osj7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2kvul"]
 texture = ExtResource("1_ayy0t")
@@ -196,6 +198,69 @@ physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 2
 sources/1 = SubResource("TileSetAtlasSource_2kvul")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmqug"]
+atlas = ExtResource("3_12f77")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlwdj"]
+atlas = ExtResource("3_12f77")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw8ey"]
+atlas = ExtResource("3_12f77")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojgs6"]
+atlas = ExtResource("3_12f77")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pwkk"]
+atlas = ExtResource("3_12f77")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3878h"]
+atlas = ExtResource("3_12f77")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fwk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmqug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlwdj")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw8ey")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojgs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pwkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3878h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihrqo"]
+radius = 3.53553
+
 [node name="mainScene" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -205,3 +270,28 @@ tile_set = SubResource("TileSet_xpph4")
 
 [node name="Player" parent="." instance=ExtResource("2_y358m")]
 position = Vector2(401, 339)
+
+[node name="Wisp" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("cooldown_timer", "sprite")]
+z_index = -1
+position = Vector2(397, 473)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6fwk8")
+animation = &"Idle"
+script = ExtResource("4_osj7i")
+cooldown_timer = NodePath("Cooldown")
+sprite = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="Wisp"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wisp/Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_ihrqo")
+
+[node name="Cooldown" type="Timer" parent="Wisp"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Wisp"]
+
+[connection signal="body_entered" from="Wisp/Area2D" to="Wisp" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Wisp/Cooldown" to="Wisp" method="_on_cooldown_timeout"]

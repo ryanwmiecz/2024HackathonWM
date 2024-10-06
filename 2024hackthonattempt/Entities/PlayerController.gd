@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
-var DASH_VELOCITY = 800
+var SPEED = 200.0
+var JUMP_VELOCITY = -300.0
+var DASH_VELOCITY = 600
 var jump_count = 1
 var dashing := false
 var dash_time = 0.1
